@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/logo"
+            android:layout_width="match_parent"
+            android:layout_height="393dp"
+            android:src="@drawable/the_chance_logo"
+            android:foreground="@drawable/grad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+            <CustomAttribute app:attributeName="round" app:customDimension="0dp"/>
+        </Constraint>
+        <Constraint
+            android:id="@+id/top_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="The chance"
+            android:textColor="#FDFDFD"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/buttom_text"
+            app:layout_constraintStart_toStartOf="@+id/logo"/>
+        <Constraint
+            android:id="@+id/buttom_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="817 subscribers"
+            android:textColor="#FDFDFD"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/logo"
+            app:layout_constraintStart_toStartOf="@+id/logo" />
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/logo"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/the_chance_logo"
+            android:layout_marginTop="56dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+            <CustomAttribute app:attributeName="round" app:customDimension="100dp"/>
+        </Constraint>
+        <Constraint
+            android:id="@+id/top_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="4dp"
+            android:text="The chance"
+            android:textColor="#FDFDFD"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/buttom_text"
+            app:layout_constraintStart_toEndOf="@+id/logo"/>
+        <Constraint
+            android:id="@+id/buttom_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="817 subscribers"
+            android:textColor="#FDFDFD"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/logo"
+            app:layout_constraintStart_toEndOf="@+id/logo" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/after">
+        <Constraint
+            android:id="@+id/logo"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
+            android:src="@drawable/the_chance_logo"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+            <CustomAttribute app:attributeName="round" app:customDimension="100dp"/>
+        </Constraint>
+        <Constraint
+            android:id="@+id/top_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="2dp"
+            android:text="The chance"
+            android:textColor="#FDFDFD"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/buttom_text"
+            app:layout_constraintStart_toEndOf="@+id/logo"/>
+        <Constraint
+            android:id="@+id/buttom_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="817 subscribers"
+            android:textColor="#FDFDFD"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/logo"
+            app:layout_constraintStart_toEndOf="@+id/logo" />
+    </ConstraintSet>
+
+    <Transition
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@+id/start" >
+        <OnSwipe
+            app:touchAnchorId="@id/top_text"
+            app:dragDirection="dragUp"/>
+    </Transition>
+
+
+    <Transition
+        app:constraintSetEnd="@id/after"
+        app:constraintSetStart="@+id/end" >
+        <OnSwipe
+            app:touchAnchorId="@id/top_text"
+            app:dragDirection="dragUp"/>
+    </Transition>
+</MotionScene>
